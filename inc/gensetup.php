@@ -24,13 +24,13 @@
 
 			try{
 				$PDOdb = new PDO("mysql:host=".$dbhostname.";dbname=".$dbdatabase, $dbusername, $dbpassword);
-				//echo "MySQL Connected!";
+				echo "MySQL Connected!";
 			}catch(PdoException $e){
 				$error_message = $e->getMessage();
 				$_SESSION['Error'] = "dbconerror";
 				echo 'cant connect to db';
 				
-				//header('location: ../setup');
+				header('location: ../setup');
 				echo '
 				<script>
 					//location.replace("../setup");
